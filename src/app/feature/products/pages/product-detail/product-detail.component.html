@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="container-images">
+    <div class="all-images">
+      <img
+        [src]="image"
+        alt="product"
+        *ngFor="let image of product?.images"
+        (click)="changeImg(image)"
+        [class.border-red]="mainImage === image"
+      />
+    </div>
+    <div class="main-image">
+      <img [src]="mainImage" alt="product" />
+    </div>
+  </div>
+  <div class="container-info">
+    <h2>{{ product?.category?.name | uppercase }}</h2>
+    <h1>{{ product?.title }}</h1>
+    <p>{{ product?.description }}</p>
+    <p>{{ product?.price | currency : "$" : "symbol" : "1.2" }}</p>
+  </div>
+</div>

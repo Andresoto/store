@@ -6,12 +6,14 @@ import { ProductComponent } from './components/product/product.component';
 import { ListProductsComponent } from './pages/list-products/list-products.component';
 import {MatButtonModule} from '@angular/material/button';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 
 @NgModule({
   declarations: [
     ProductComponent,
-    ListProductsComponent
+    ListProductsComponent,
+    ProductDetailComponent
   ],
   imports: [
     CommonModule,
