@@ -5,7 +5,7 @@
     <div class="information">
         <h3> {{product.title}} </h3>
         <p> {{product.price | currency: '$':'symbol':'1.2'}} </p>
-        <p class="text-gray">10 minutes ago</p>
+        <p class="text-gray"> {{product.creationAt | timeAgo}} </p>
         <button mat-button>Add to cart</button>
     </div>
 </div>

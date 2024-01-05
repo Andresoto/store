@@ -5,6 +5,7 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductComponent } from './components/product/product.component';
 import { ListProductsComponent } from './pages/list-products/list-products.component';
 import {MatButtonModule} from '@angular/material/button';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [
     CommonModule,
     ProductsRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    SharedModule
   ]
 })
 export class ProductsModule { }

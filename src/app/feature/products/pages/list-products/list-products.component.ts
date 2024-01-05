@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Product } from 'src/app/shared/models/product.model';
+import { Product } from 'src/app/core/models/product.model';
 import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
@@ -22,7 +22,6 @@ export class ListProductsComponent {
     .subscribe({
       next: (products) => {
         this.products = products;
-        console.log(this.products);
       },
       error: () => {
         console.log('error');
