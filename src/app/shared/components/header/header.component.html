@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="logo-container">
+    <a routerLink="/" class="logo">
+      <img src="../../../../assets/img/logo.png" alt="" />
+      <span>Fast</span>
+    </a>
+  </div>
+  <div class="items">
+    <ul>
+      <li>
+        <a routerLink="products" routerLinkActive="">Home</a>
+      </li>
+      <li>
+        <a routerLink="yolo" routerLinkActive="">Product</a>
+      </li>
+      <li>
+        <a routerLink="otros" routerLinkActive=""  class="cart">
+          <i class="fa-solid fa-cart-shopping"></i><span>Cart</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/" routerLinkActive="focused" [routerLinkActiveOptions]="{exact: true}" class="login">
+          <i class="fa-solid fa-user"></i><span>Login</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>

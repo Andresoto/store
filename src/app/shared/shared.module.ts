@@ -2,20 +2,26 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { HeaderComponent } from './components/header/header.component';
+import { RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [
     TimeAgoPipe,
-    SpinnerComponent
+    SpinnerComponent,
+    HeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterLinkWithHref,
+    RouterLinkActive
   ],
   exports: [
     TimeAgoPipe,
-    SpinnerComponent
+    SpinnerComponent,
+    HeaderComponent
   ]
 })
 export class SharedModule { }
