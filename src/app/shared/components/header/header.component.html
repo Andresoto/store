@@ -5,24 +5,44 @@
       <span>Fast</span>
     </a>
   </div>
-  <div class="items">
+  <div class="navbar-items" [class.active]="showNavMenu">
     <ul>
       <li>
-        <a routerLink="home" routerLinkActive="focused">Home</a>
+        <a
+          routerLink="home"
+          routerLinkActive="focused"
+          >Home</a
+        >
       </li>
       <li>
-        <a routerLink="products" routerLinkActive="focused">Products</a>
+        <a
+          routerLink="products"
+          routerLinkActive="focused"
+          >Products</a
+        >
       </li>
       <li>
-        <a routerLink="cart" routerLinkActive="focused"  class="cart">
-          <i class="fa-solid fa-cart-shopping"></i><span>Cart</span>
+        <a
+          routerLink="cart"
+          routerLinkActive="focused"
+          class="cart"
+        >
+          <i class="fa-solid fa-cart-shopping"></i><span> Cart</span>
         </a>
       </li>
       <li>
-        <a routerLink="auth/login" routerLinkActive="focused" class="login">
-          <i class="fa-solid fa-user"></i><span>Login</span>
+        <a
+          routerLink="auth/login"
+          routerLinkActive="focused"
+          class="login"
+        >
+          <i class="fa-solid fa-user"></i><span> Login</span>
         </a>
       </li>
     </ul>
   </div>
+  <button (click)="toggleNavMenu()">
+    <span *ngIf="!showNavMenu"><i class="fa-solid fa-bars"></i></span>
+    <span *ngIf="showNavMenu"><i class="fa-solid fa-xmark"></i></span>
+  </button>
 </header>

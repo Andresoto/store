@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  showNavMenu: boolean = false;
+
+  toggleNavMenu() {
+    this.showNavMenu = !this.showNavMenu;
+  }
+
 }
