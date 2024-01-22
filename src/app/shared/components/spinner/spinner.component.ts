@@ -5,6 +5,7 @@ import { SpinnerService } from '@shared/services/spinner.service';
   selector: 'app-spinner',
   template: `<div class="overlay" *ngIf="isLoading$ | async">
     <div class="spinner icon-spinner" aria-hidden="true"></div>
+    <h3>Cargando...</h3>
   </div>`,
   styleUrls: ['./spinner.component.scss']
 })
