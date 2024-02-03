@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { SpinnerService } from '@shared/services/spinner.service';
 
@@ -7,7 +8,9 @@ import { SpinnerService } from '@shared/services/spinner.service';
     <div class="spinner icon-spinner" aria-hidden="true"></div>
     <h3>Cargando...</h3>
   </div>`,
-  styleUrls: ['./spinner.component.scss']
+  styleUrls: ['./spinner.component.scss'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class SpinnerComponent {
   
