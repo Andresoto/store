@@ -1,65 +1,73 @@
 .card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
+  overflow: hidden;
+  height: 100%;
+  .image {
+    overflow: hidden;
+    min-height: 60%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .information {
+    padding: 20px;
+    line-height: 1.5;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    border-radius: 8px;
-    box-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
-    overflow: hidden;
+    .title {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      color: #000;
+    }
+    .information-product {
+      .text-gray {
+        color: #6b7280;
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+    background-color: #e5e7eb;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 740px) {
+  .card {
+    flex-direction: row;
     height: 100%;
     .image {
-        overflow: hidden;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-            &:hover {
-                transform: scale(1.1);
-            }
-        }
+      width: 250px;
     }
 
     .information {
-        padding: 20px;
-        line-height: 1.5;
-        .text-gray{
-            color: #6b7280;
-        }
-        a {
-            color: #000;
-        }
-    }
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
-    button{
-        width: 100%;
-        background-color: #e5e7eb;
-        margin-top: 8px;
-    }
-}
-
-
-@media (max-width: 740px) {
-    .card {
-        flex-direction: row;
-        height: 100%;
-        .image {
-            width: 250px;
-        }
-
-        .information {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            h3 {
-                font-size: 16px;
-            }
-            p {
-                font-size: 14px;
-            }
-            button{
-                font-size: 13px;
-            }
-        }
+      h3 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 14px;
+      }
+      button {
+        font-size: 13px;
+      }
     }
   }
+}

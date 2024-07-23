@@ -1,0 +1,119 @@
+// div {
+//   border: 1px solid red;
+// }
+@mixin btn($color, $size) {
+  button, a {
+    border: 2px solid $color;
+    border-radius: 4px;
+    padding: 16px;
+    background: none;
+    color: $color;
+    font-weight: bold;
+    font-size: $size;
+  }
+}
+.container {
+  display: grid;
+  gap: 16px;
+  .main-image {
+    width: 100%;
+    height: calc(100vh - 72px);
+    position: relative;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+
+    .botones {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      @include btn(#fff, 1.8rem);
+      a:hover {
+        border: none;
+        text-decoration: underline;
+        text-underline-offset: 12px;
+      }
+    }
+  }
+
+  .images {
+    display: grid;
+    grid-template-areas:
+      "a c c b"
+      "a d e b";
+    gap: 16px;
+    padding: 0 16px;
+    .img {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+        filter: brightness(70%);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.2);
+          filter: brightness(60%);
+          
+          button:hover {
+            border: none;
+            text-decoration: underline;
+            text-underline-offset: 12px;
+          }
+        }
+      }
+      @include btn(#fff, 1.5rem);
+    }
+
+    .img1 {
+      grid-area: a;
+    }
+    .img2 {
+      grid-area: b;
+    }
+    .img3 {
+      grid-area: c;
+      height: 300px;
+    }
+    .img4 {
+      grid-area: d;
+    }
+    .img5 {
+      grid-area: e;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .container {
+    .images {
+      grid-template-areas:
+        "a a b b"
+        "c c d d"
+        ". e e . ";
+
+      .img3 {
+        height: 100%;
+      }
+    }
+  }
+}

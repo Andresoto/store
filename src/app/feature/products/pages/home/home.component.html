@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="container">
+    <div class="main-image">
+        <img src="../../../../assets/img/Screenshot_4.png" alt="">
+        <div class="botones">
+            <!-- <button>Botón 1</button> -->
+            <a routerLink="/products">buy</a>
+        </div>
+    </div>
+    <div class="images">
+        <ng-container *ngFor="let category of categories; let i = index">
+            <div class="img{{i+1}} img">
+                <img [src]="category.image" alt="">
+                <button>{{category.name}}</button>
+            </div>
+        </ng-container>
+    </div>
+</div>

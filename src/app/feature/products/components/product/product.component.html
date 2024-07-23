@@ -1,11 +1,15 @@
 <div class="card">
-    <a [routerLink]="['/product', product.id]" class="image">
-        <img [src]="product.images[0]" [alt]="product.title">
+  <a [routerLink]="['/product', product.id]" class="image">
+    <img [src]="product.images[0]" [alt]="product.title" />
+  </a>
+  <div class="information">
+    <a [routerLink]="['/product', product.id]" class="title"
+      ><h3>{{ product.title }}</h3>
     </a>
-    <div class="information">
-        <h3> <a [routerLink]="['/product', product.id]">{{product.title}}</a> </h3>
-        <p> {{product.price | currency: '$':'symbol':'1.2'}} </p>
-        <p class="text-gray"> {{product.creationAt | timeAgo}} </p>
-        <button mat-button>Add to cart</button>
+    <div class="information-product">
+      <p>{{ product.price | currency : "$" : "symbol" : "1.2" }}</p>
+      <p class="text-gray">{{ product.creationAt | timeAgo }}</p>
+      <button mat-button>Add to cart</button>
     </div>
+  </div>
 </div>
